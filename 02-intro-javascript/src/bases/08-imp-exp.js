@@ -1,11 +1,11 @@
-import heroes, {owners} from "../data/heroes";
+//import heroes, {owners} from "../data/heroes";
+import heroes from "../data/heroes";
+//console.log(owners);
 
-console.log(owners);
 
 
+export const getHeroById = (id) => heroes.find((hero) => hero.id === id);
+//console.log(getHeroById(3));
 
-const getHeroById = (id) => heroes.find((hero) => hero.id === id);
-console.log(getHeroById(3));
-
-const getHeroByOwner = (owner) => heroes.filter((hero) => hero.owner === owner);
-console.log(getHeroByOwner('DC'));
+export const getHeroByOwner = (owner) => heroes.filter((hero) => hero.owner === owner);
+//console.log(getHeroByOwner('DC'));
