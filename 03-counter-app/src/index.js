@@ -6,6 +6,6 @@ import './index.css';
 
 const divRoot = document.querySelector('#root');
 
-ReactDOM.render( <FirstApp /> , divRoot )
+ReactDOM.render( <FirstApp name="Vegeta" /> , divRoot )
 
 

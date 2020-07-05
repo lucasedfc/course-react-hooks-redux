@@ -1,10 +1,10 @@
 //import React, { Fragment } from 'react';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const FirstApp = ({name = 'Hi there'}) => {
+const FirstApp = ({ name }) => {
 
-
-    
+        
     return (
         <>
             {/* <pre>{ JSON.stringify(greeting, null, 3)}</pre> */}
@@ -14,7 +14,11 @@ const FirstApp = ({name = 'Hi there'}) => {
         
     );
 
+}
 
+FirstApp.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
 }
 
 export default FirstApp;
