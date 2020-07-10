@@ -7,9 +7,9 @@ const FirstApp = ({ name, subtitle }) => {
         
     return (
         <>
-            <h1>{ name }!! </h1>
+            <h1>{ name }!!</h1>
         {/* <pre>{ JSON.stringify(greeting, null, 3)}</pre> */}
-            <p>{subtitle} </p>
+            <p>{subtitle}</p>
         </>
         
     );

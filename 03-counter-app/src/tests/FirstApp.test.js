@@ -21,5 +21,20 @@ describe('Test on FirstApp', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('should return a subtitle', async () => {
+        
+        const greeting = 'Hi Luke';
+        const subtitle = 'Another subtitle';
+
+        const wrapper = shallow(
+            <FirstApp 
+                name={greeting} 
+                subtitle={subtitle}
+            />
+        );
+
+        const paragraphText = wrapper.find('p').text();
+        expect(paragraphText).toBe(subtitle);
+    });
 
 })
