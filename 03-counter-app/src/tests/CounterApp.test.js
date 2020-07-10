@@ -5,9 +5,14 @@ import CounterApp from '../CounterApp';
 
 describe('Testing CounterApp', () => {
     
+    let wrapper = shallow(<CounterApp />);
+
+    beforeEach(() => {
+        wrapper = shallow(<CounterApp />);
+    })
+
     test('should return the counter app component correctly', async () => {
-        
-        const wrapper = shallow(<CounterApp />);
+
         expect(wrapper).toMatchSnapshot();
         
     })
@@ -21,6 +26,31 @@ describe('Testing CounterApp', () => {
 
         expect(expectedValue).toBe('100');
     })
+
+    test('should increment with the add button', () => {
+        
+        wrapper.find('button').at(0).simulate('click');
+        // const btn2 = wrapper.find('button').at(1);
+        // const btn3 = wrapper.find('button').at(2);
+        const counterText = wrapper.find('h2').text().trim();
+
+        expect(counterText).toBe('11');
+        
+    })
+
+    test('should decrease with the remove button', () => {
+
+        
+        wrapper.find('button').at(2).simulate('click');
+        // const btn2 = wrapper.find('button').at(1);
+        // const btn3 = wrapper.find('button').at(2);
+        const counterText = wrapper.find('h2').text().trim();
+        
+
+        expect(counterText).toBe('9');
+        
+    })
+    
     
     
 })
