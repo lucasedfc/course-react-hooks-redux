@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
 
-    
 
-    const [categories, setCategories] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
+
+    const [categories, setCategories] = useState(['Dragon Ball']);
 
     // const handleAdd = () => {
     //     // setCategories(cat => [...categories, 'New data']);
@@ -16,12 +17,16 @@ export const GifExpertApp = () => {
         <>
             <h2>GifExpertApp</h2>
 
-            <AddCategory setCategories= {setCategories}></AddCategory>
+            <AddCategory setCategories={setCategories}></AddCategory>
             <hr></hr>
-            
+
             <ol>
                 {
-                    categories.map(category => <li key={category}>{category}</li>)
+                    categories.map(category => {
+                        return <GifGrid
+                            key={category}
+                            category={category} />
+                    })
                 }
             </ol>
         </>
